@@ -1,0 +1,14 @@
+{
+  "name": "fur",
+  "version": "0.0.0",
+  "homepage": "https://github.com/iFahad7/fur",
+  "authors": [
+    "Fahad Almusharraf <ifahad7@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "backbone": "~1.1.2",
+    "jquery": "~2.1.1"
+  }
+}
