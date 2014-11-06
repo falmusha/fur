@@ -1,16 +1,18 @@
 define [
-  'jquery',
-  'underscore',
-  'backbone',
-], ($, _, Backbone) ->
+  'jquery'
+  'underscore'
+  'backbone'
+  'views/blueprint'
+], ($, _, Backbone, BlueprintView) ->
 
   class window.FurRouter extends Backbone.Router
 
     routes:
-      '':'initFur'
+      '(/)':'index'
 
-    initFur: ->
-      alert 'Should be rendering stuff'
+    index: ->
+      blueprintView = new BlueprintView()
+      blueprintView.render()
 
   initialize =  ->
     furRouter = new FurRouter()
