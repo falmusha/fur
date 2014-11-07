@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+RoomLayout.create([
+  {name: 'bedroom', description: 'desc_a', width: 3, height: 4},
+  {name: 'living room', description: 'desc_b', width: 4, height: 5}
+])

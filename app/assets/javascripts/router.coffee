@@ -2,19 +2,29 @@ define [
   'jquery'
   'underscore'
   'backbone'
-  'views/blueprint'
-], ($, _, Backbone, BlueprintView) ->
+  'collections/room-layout'
+  'views/room-layout-grid'
+], ($, _, Backbone, RoomLayoutCollection, RoomLayoutGridView) ->
 
-  class window.FurRouter extends Backbone.Router
+  class FurRouter extends Backbone.Router
 
     routes:
       '(/)':'index'
 
+
     index: ->
-      blueprintView = new BlueprintView()
-      blueprintView.render()
+      @createGrid()
+
+    createGrid: ->
+      roomLayoutGridView = new RoomLayoutGridView(
+        collection: new RoomLayoutCollection()
+      )
+      injectView roomLayoutGridView.el, 'body'
+
 
   initialize =  ->
+    window.injectView = (c, p) ->
+      $(p).append c
     furRouter = new FurRouter()
     Backbone.history.start()
 
