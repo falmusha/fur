@@ -2,9 +2,25 @@ define [
   'jquery'
   'underscore'
   'backbone'
+
   'collections/room-layout'
+  'collections/project'
+
+  'views/main-grid'
   'views/room-layout-grid'
-], ($, _, Backbone, RoomLayoutCollection, RoomLayoutGridView) ->
+  'views/sidebar'
+  'views/sidebar-project'
+], (
+  $,
+  _,
+  Backbone,
+  RoomLayoutCollection,
+  ProjectCollection,
+  MainGridView,
+  RoomLayoutGridView,
+  SidebarView,
+  SidebarProjectView
+) ->
 
   class FurRouter extends Backbone.Router
 
@@ -13,13 +29,27 @@ define [
 
 
     index: ->
-      @createGrid()
+      @createMainGrid()
+      @createSidebar()
+      @createRoomLayoutGrid()
 
-    createGrid: ->
+    createMainGrid: ->
+      @mainGridView = new MainGridView()
+      injectView @mainGridView.el, 'body'
+
+    createSidebar: ->
+      sidebarView = new SidebarView()
+      sidebarProjectView = new SidebarProjectView(
+        collection: new ProjectCollection()
+      )
+      injectView sidebarView.el, @mainGridView.el
+      injectView sidebarProjectView.el, sidebarView.el
+
+    createRoomLayoutGrid: ->
       roomLayoutGridView = new RoomLayoutGridView(
         collection: new RoomLayoutCollection()
       )
-      injectView roomLayoutGridView.el, 'body'
+      injectView roomLayoutGridView.el, @mainGridView.el
 
 
   initialize =  ->

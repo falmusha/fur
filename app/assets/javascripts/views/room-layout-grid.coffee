@@ -8,7 +8,10 @@ define [
 
   class RoomLayoutGridView extends Backbone.View
 
-    className: 'room-layout-grid'
+    className: 'col-3-4 \
+                grid \
+                grid-pad \
+                room-layout-grid'
 
     initialize: ->
       @collection.fetch success: => @render()

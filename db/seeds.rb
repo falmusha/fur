@@ -6,7 +6,27 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-RoomLayout.create([
-  {name: 'bedroom', description: 'desc_a', width: 3, height: 4},
-  {name: 'living room', description: 'desc_b', width: 4, height: 5}
+Project.create([
+  {name: 'bedrooms', description: 'some_bedrooms'},
+  {name: 'livingrooms', description: 'some_bedrooms'}
 ])
+
+5.times do |i|
+  RoomLayout.create({
+           name: "bedroom_#{i}",
+    description: "desc_b_#{i}",
+          width: 3*i,
+         height: 4*i,
+     project_id: Project.first.id
+  })
+end
+
+5.times do |i|
+  RoomLayout.create({
+           name: "livingroom_#{i}",
+    description: "desc_l_#{i}",
+          width: i,
+         height: i,
+     project_id: Project.last.id
+  })
+end

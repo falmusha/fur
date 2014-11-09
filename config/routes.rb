@@ -7,4 +7,5 @@ Fur::Application.routes.draw do
   # Resources
   # ------------------------
   resources :room_layouts, only: [:index]
+  resources :projects, only: [:index]
 end
