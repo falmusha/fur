@@ -7,7 +7,7 @@ define [
 
   class RoomLayoutGridItemView extends Backbone.View
 
-    className: 'col-1-8'
+    className: 'room-layout-item'
 
     initialize: ->
       @

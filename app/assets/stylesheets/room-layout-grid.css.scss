@@ -1,3 +1,20 @@
+$pad: 20px;
+
 .room-layout-grid {
-  background: #5AAC7B;
+
+  margin: 0 0 $pad 0;
+
+  &:after {
+    /* Or @extend clearfix */
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &.col-md-10 {
+    background: #5AAC7B;
+    display: table-cell;
+    float: none;
+  }
+
 }

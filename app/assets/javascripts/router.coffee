@@ -6,7 +6,7 @@ define [
   'collections/room-layout'
   'collections/project'
 
-  'views/main-grid'
+  'views/home'
   'views/room-layout-grid'
   'views/sidebar'
   'views/sidebar-project'
@@ -16,7 +16,7 @@ define [
   Backbone,
   RoomLayoutCollection,
   ProjectCollection,
-  MainGridView,
+  HomeView,
   RoomLayoutGridView,
   SidebarView,
   SidebarProjectView
@@ -29,27 +29,29 @@ define [
 
 
     index: ->
-      @createMainGrid()
+      @createHomeView()
       @createSidebar()
       @createRoomLayoutGrid()
 
-    createMainGrid: ->
-      @mainGridView = new MainGridView()
-      injectView @mainGridView.el, 'body'
+    createHomeView: ->
+      @homeView = new HomeView()
+      container = $('<div>').addClass('container')
+      injectView container, 'body'
+      injectView @homeView.el, container
 
     createSidebar: ->
       sidebarView = new SidebarView()
       sidebarProjectView = new SidebarProjectView(
         collection: new ProjectCollection()
       )
-      injectView sidebarView.el, @mainGridView.el
+      injectView sidebarView.el, @homeView.el
       injectView sidebarProjectView.el, sidebarView.el
 
     createRoomLayoutGrid: ->
       roomLayoutGridView = new RoomLayoutGridView(
         collection: new RoomLayoutCollection()
       )
-      injectView roomLayoutGridView.el, @mainGridView.el
+      injectView roomLayoutGridView.el, @homeView.el
 
 
   initialize =  ->

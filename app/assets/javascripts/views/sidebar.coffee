@@ -7,7 +7,7 @@ define [
 
   class SidebarView extends Backbone.View
 
-    className: 'sidebar col-1-8'
+    className: 'sidebar col-md-2'
 
     initialize: ->
       @render()

@@ -1,16 +1,30 @@
-$room-module-pad: 20px;
-$background-color: #eee;
+$pad: 20px;
 
-.room-module {
-  padding: $room-module-pad;
-  background: $background-color;
+.room-layout-item {
+
+  background: #eee;
+	float: left;
+  padding-right: $pad;
+  padding-bottom: $pad;
+  margin: 10px;
+  width: 200px;
+  height: 250px;
+
+  .room-layout-grid &:last-of-type {
+    padding-right: 0;
+  }
+
   .picture {
-    height: 60%;
+    background: black;
+    width: 200px;
+    height: 125px;
    /*empty for now */
   }
   .room-info {
+    width: 200px;
+    height: 125px;
+    background: white;
     margin: auto;
-    height: 40%;
     h4 {
       text-align: center;
     }

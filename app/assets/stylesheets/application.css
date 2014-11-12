@@ -12,8 +12,16 @@
  * require_tree .
  */
 
-@import url('grid.css');
-@import url('main-grid.css');
-@import url('room-layout-grid.css');
-@import url('room-layout-grid-item.css');
-@import url('sidebar.css');
+/*@import url('grid.css');*/
+/*@import url('bootstrap/dist/css/bootstrap.min.css')*/
+/*@import url('home.css');*/
+/*@import url('room-layout-grid.css');*/
+/*@import url('room-layout-grid-item.css');*/
+/*@import url('sidebar.css');*/
+/*
+*= require 'bootstrap/dist/css/bootstrap.min.css'
+*= require 'home.css'
+*= require 'room-layout-grid.css'
+*= require 'room-layout-grid-item.css'
+*= require 'sidebar.css'
+*/
