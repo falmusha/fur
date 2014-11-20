@@ -5,16 +5,10 @@ $pad: 20px;
   margin: 0 0 $pad 0;
 
   &:after {
-    /* Or @extend clearfix */
     content: "";
     display: table;
     clear: both;
   }
 
-  display: table-cell;
-  /*&.col-md-10 {*/
-    /*background: #5AAC7B;*/
-    /*float: none;*/
-  /*}*/
 
 }

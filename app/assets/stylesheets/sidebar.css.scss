@@ -1,13 +1,31 @@
 .sidebar {
 
-  background: #96BA5A;
+  background: #6C788E;
   height: 100%;
-  /*display: table-cell;*/
-  /*display: table-cell;*/
-  /*float: none;*/
-  /*&.col-md-2 {*/
-    /*[>background: #96BA5A;<]*/
-    /*[>display: table-cell;<]*/
-    /*[>float: none;<]*/
-  /*}*/
+  
+  h3 {
+    margin-left: 10px;
+    color: white;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+    li {
+      padding: 2px 0 2px 0;
+      margin-left: 20px;
+      a {
+        color: white;
+        font-size: 15px;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+          text-decoration: none;
+        }
+      }
+
+    }
+
+  }
 }
