@@ -1,8 +1,13 @@
 .sidebar {
 
-  &.col-md-2 {
-    background: #96BA5A;
-    display: table-cell;
-    float: none;
-  }
+  background: #96BA5A;
+  height: 100%;
+  /*display: table-cell;*/
+  /*display: table-cell;*/
+  /*float: none;*/
+  /*&.col-md-2 {*/
+    /*[>background: #96BA5A;<]*/
+    /*[>display: table-cell;<]*/
+    /*[>float: none;<]*/
+  /*}*/
 }

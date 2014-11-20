@@ -11,10 +11,10 @@ $pad: 20px;
     clear: both;
   }
 
-  &.col-md-10 {
-    background: #5AAC7B;
-    display: table-cell;
-    float: none;
-  }
+  display: table-cell;
+  /*&.col-md-10 {*/
+    /*background: #5AAC7B;*/
+    /*float: none;*/
+  /*}*/
 
 }

@@ -7,7 +7,7 @@ define [
 
   class HomeView extends Backbone.View
 
-    className: 'home row'
+    className: 'row home'
 
     initialize: ->
       @render()

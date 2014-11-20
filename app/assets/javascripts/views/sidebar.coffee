@@ -2,12 +2,23 @@ define [
   'jquery'
   'underscore'
   'backbone'
+
+  'views/sidebar-project'
+  'collections/project'
+
   'hbs!templates/sidebar'
-], ($, _, Backbone, sidebarTemplate) ->
+], (
+  $,
+  _,
+  Backbone,
+  SidebarProjectView,
+  ProjectCollection,
+  sidebarTemplate
+) ->
 
   class SidebarView extends Backbone.View
 
-    className: 'sidebar col-md-2'
+    className: 'col-md-2 sidebar'
 
     initialize: ->
       @render()
@@ -15,5 +26,11 @@ define [
     render: ->
       template = sidebarTemplate {}
       @$el.html template
+      @renderProjectsView()
       @
 
+    renderProjectsView: ->
+      sidebarProjectView = new SidebarProjectView(
+        collection: new ProjectCollection()
+      )
+      injectView sidebarProjectView.el, @el

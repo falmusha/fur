@@ -3,23 +3,16 @@ define [
   'underscore'
   'backbone'
 
-  'collections/room-layout'
-  'collections/project'
-
   'views/home'
-  'views/room-layout-grid'
+  'views/main-body'
   'views/sidebar'
-  'views/sidebar-project'
 ], (
   $,
   _,
   Backbone,
-  RoomLayoutCollection,
-  ProjectCollection,
   HomeView,
-  RoomLayoutGridView,
-  SidebarView,
-  SidebarProjectView
+  MainBodyView
+  SidebarView
 ) ->
 
   class FurRouter extends Backbone.Router
@@ -31,27 +24,21 @@ define [
     index: ->
       @createHomeView()
       @createSidebar()
-      @createRoomLayoutGrid()
+      @createMainBody()
 
     createHomeView: ->
       @homeView = new HomeView()
       container = $('<div>').addClass('container')
-      injectView container, 'body'
       injectView @homeView.el, container
+      injectView container, 'body'
 
     createSidebar: ->
-      sidebarView = new SidebarView()
-      sidebarProjectView = new SidebarProjectView(
-        collection: new ProjectCollection()
-      )
-      injectView sidebarView.el, @homeView.el
-      injectView sidebarProjectView.el, sidebarView.el
+      @sidebarView = new SidebarView()
+      injectView @sidebarView.el, @homeView.el
 
-    createRoomLayoutGrid: ->
-      roomLayoutGridView = new RoomLayoutGridView(
-        collection: new RoomLayoutCollection()
-      )
-      injectView roomLayoutGridView.el, @homeView.el
+    createMainBody: ->
+      @mainBodyView = new MainBodyView()
+      injectView @mainBodyView.el, @homeView.el
 
 
   initialize =  ->

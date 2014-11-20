@@ -5,19 +5,16 @@ html,body,.container {
 .container {
   display: table;
   width: 100%;
-  margin-top: -50px;
-  padding: 50px 0 0 0; /*set left/right padding according to needs*/
+  padding: 0px;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.home.row {
+.home {
   height: 100%;
-  display: table-row;
 }
 
-.col-md-9 {
-  display: table-cell;
-  /*background: yellow;*/
-  float: none;
+.main-body {
+  height: 100%;
+  background: #5AAC7B;
 }
