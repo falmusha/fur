@@ -34,6 +34,9 @@ end
 
 gem 'pg'
 gem 'devise'
+gem "paperclip", "~> 4.2"
+gem 'draper', '~> 1.3'
+gem 'pry'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

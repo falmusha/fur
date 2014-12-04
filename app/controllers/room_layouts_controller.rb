@@ -1,7 +1,8 @@
 class RoomLayoutsController < ApplicationController
 
   def index
-    render :json => RoomLayout.all
+    decorated = RoomLayoutDecorator.decorate_collection(RoomLayout.all)
+    render :json => decorated
   end
 
 end
