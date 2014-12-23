@@ -21,6 +21,7 @@
 /*
 *= require 'bootstrap/dist/css/bootstrap.min.css'
 *= require 'home.css'
+*= require 'new-room-layout.css'
 *= require 'room-layout-grid.css'
 *= require 'room-layout-grid-item.css'
 *= require 'sidebar.css'

@@ -3,12 +3,14 @@ define [
   'underscore'
   'backbone'
 
+  'views/new-room-layout'
   'views/room-layout-grid'
   'collections/room-layout'
 ], (
   $,
   _,
   Backbone,
+  NewRoomLayoutView,
   RoomLayoutGridView,
   RoomLayoutCollection
 ) ->
@@ -21,8 +23,13 @@ define [
       @render()
 
     render: ->
-      @renderRoomLayoutGrid()
+      #@renderRoomLayoutGrid()
+      @renderNewRoomLayout()
       @
+
+    renderNewRoomLayout: ->
+      newRoomLayoutView = new NewRoomLayoutView()
+      injectView newRoomLayoutView.el, @el
 
     renderRoomLayoutGrid: ->
       roomLayoutGridView = new RoomLayoutGridView(
