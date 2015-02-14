@@ -11,6 +11,7 @@ define [
 
     events:
       'submit form':'submit'
+
     initialize: ->
       @render()
 

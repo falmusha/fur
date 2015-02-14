@@ -23,9 +23,14 @@ define [
       @render()
 
     render: ->
-      #@renderRoomLayoutGrid()
-      @renderNewRoomLayout()
+      @renderRoomLayoutGridNavbar()
+      @renderRoomLayoutGrid()
+      #@renderNewRoomLayout()
       @
+
+    renderRoomLayoutGridNavbar: ->
+      newRoomLayoutView = new NewRoomLayoutView()
+      injectView newRoomLayoutView.el, @el
 
     renderNewRoomLayout: ->
       newRoomLayoutView = new NewRoomLayoutView()

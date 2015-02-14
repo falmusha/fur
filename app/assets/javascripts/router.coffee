@@ -10,10 +10,12 @@ define [
   $,
   _,
   Backbone,
+
   HomeView,
   MainBodyView
   SidebarView
 ) ->
+
 
   class FurRouter extends Backbone.Router
 
@@ -21,6 +23,15 @@ define [
       '(/)':'index'
 
 
+    # --------------------------------------
+    # -              HomeView              -
+    # --------------------------------------
+    # -          |                         -
+    # -          |                         -
+    # -  Sidebar |         MainBody        -
+    # -          |                         -
+    # -          |                         -
+    # --------------------------------------
     index: ->
       @createHomeView()
       @createSidebar()
